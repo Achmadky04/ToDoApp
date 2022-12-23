@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(brightness: Brightness.dark,
       fontFamily: "Montserrat"),
       routes: {
-        'homepage' :(context) => HomePage()
+        'homepage' :(context) => const HomePage()
       },
       initialRoute: 'homepage',
     );
