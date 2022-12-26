@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:todoapp/models/todo.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -8,7 +9,9 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  bool varSementara = true;
+  
+  List<Todo> todos = dataTodo;
+
   @override
   Widget build(BuildContext context) {
     AppBar myAppBar = AppBar(
@@ -45,19 +48,28 @@ class _HomePageState extends State<HomePage> {
                   width: widthBody,
                   // color: Colors.amber,
                   child: ListView.builder(
-                    itemCount: 10,
+                    itemCount: todos.length,
                     itemBuilder: ((context, index) {
+                      final todo = todos[index];
                       return CheckboxListTile(
-                        secondary: IconButton(onPressed: () {}, icon: Icon(Icons.delete,
+                        secondary: IconButton(onPressed: () {
+                          setState(() {
+                            todos.removeAt(index);
+                          });
+                        }, icon: Icon(Icons.delete,
                           color: Colors.red,)),
                         controlAffinity: ListTileControlAffinity.leading,
-                        title: const Text(
-                          "Title",
-                          style: TextStyle(fontSize: 17),
+                        title: Text(
+                          todo.title,
+                          style: TextStyle(fontSize: 17, decoration: todo.isCompleted ? TextDecoration.lineThrough : TextDecoration.none),
                         ),
-                        subtitle: const Text("Subtitle"),
-                        value: varSementara,
-                        onChanged: (value) {},
+                        subtitle: Text(todo.desc),
+                        value: todo.isCompleted,
+                        onChanged: (value) {
+                          setState(() {
+                            todo.isCompleted = value!;
+                          });
+                        },
                       );
                     }),
                   ))
