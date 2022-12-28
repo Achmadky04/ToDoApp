@@ -9,6 +9,7 @@ Change Log :
 
 12/26/2022 : Adding Delete Function and LineTrough after checkbox is clicked.
 12/27/2022 : Adding Search Function.
+12/28/2022 : Adding Add Todo Function.
 
 ## Getting Started
 

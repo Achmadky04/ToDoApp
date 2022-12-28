@@ -1,5 +1,6 @@
 // import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:todoapp/Screen/addtodo.dart';
 import 'package:todoapp/Screen/homepage.dart';
 
 
@@ -15,7 +16,8 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(brightness: Brightness.dark,
       fontFamily: "Montserrat"),
       routes: {
-        'homepage' :(context) => const HomePage()
+        'homepage' :(context) => const HomePage(),
+        'add_todo' :(context) => const AddTodo()
       },
       initialRoute: 'homepage',
     );
