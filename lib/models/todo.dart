@@ -10,6 +10,6 @@ class Todo {
 }
 
 List<Todo> dataTodo = [
-  Todo(id: DateTime.now().toString(), title: "Mengerjakan Tugas", desc: "Tugas Kuliah"),
-  Todo(id: DateTime.now().toString(), title: "Memasak", desc: "Memasak Ikan Bakar"),
+  // Todo(id: DateTime.now().toString(), title: "Mengerjakan Tugas", desc: "Tugas Kuliah"),
+  // Todo(id: DateTime.now().toString(), title: "Memasak", desc: "Memasak Ikan Bakar"),
 ];
